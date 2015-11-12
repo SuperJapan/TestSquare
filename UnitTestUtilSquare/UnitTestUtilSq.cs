@@ -15,7 +15,7 @@ namespace UnitTestUtilSquare
             double a = 44, b = 59;
             double actual = UtilMath.getSquareTriangle(a, b);
 
-            Assert.AreEqual(expected, actual, 0.001, "result not equal expected");
+            Assert.AreEqual(expected, actual, 0.001, "result is not as expected");
         }
 
         [TestMethod]
@@ -26,7 +26,7 @@ namespace UnitTestUtilSquare
             double a = 105, b = 23.5;
             double actual = UtilMath.getSquareTriangle(a, b);
 
-            Assert.AreEqual(expected, actual, 0.001, "result not equal expected");
+            Assert.AreEqual(expected, actual, 0.001, "result is not as expected");
         }
 
 
@@ -42,7 +42,7 @@ namespace UnitTestUtilSquare
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void TestIncorrectArgumentsEqualZero()
+        public void TestIncorrectArgumentsIsEqualToZero()
         {
             double a = 0, b = 19;
             double square = UtilMath.getSquareTriangle(a, b);
@@ -67,7 +67,7 @@ namespace UnitTestUtilSquare
         }
 
         [TestMethod]
-        public void TestIncorrectArgumentsEqualZero1()
+        public void TestIncorrectArgumentsIsEqualToZero1()
         {
             double a = 0, b = 15;
             try
@@ -77,7 +77,7 @@ namespace UnitTestUtilSquare
             catch (ArgumentOutOfRangeException e)
             {
                 // assert
-                StringAssert.Contains(e.Message, UtilMath.ArgumentEqualZeroMessage);
+                StringAssert.Contains(e.Message, UtilMath.ArgumentIsEqualToZeroMessage);
             }
         }
     }
