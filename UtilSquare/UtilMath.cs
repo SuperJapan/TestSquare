@@ -8,10 +8,22 @@ namespace UtilSquare
 {
     public class UtilMath
     {
+        public const string ArgumentEqualZeroMessage = "Argument equal zero";
+        public const string ArgumentLessThanZeroMessage = "Argument less than zero";
+
         public static double getSquareTriangle(double a, double b)
         {
+		if (a < 0 || b < 0)
+		{
+			throw new ArgumentOutOfRangeException((a < 0 ? "a" : "b"), (a < 0 ? a : b), ArgumentLessThanZeroMessage);
+		}
+		else if (a == 0 || b == 0)
+		{
+			throw new ArgumentOutOfRangeException((a == 0 ? "a" : "b"), (a == 0 ? a : b), ArgumentEqualZeroMessage);
+		}
+		
             return (a * b) / 2;
         }
-        
+
     }
 }
